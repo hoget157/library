@@ -8,6 +8,8 @@ struct modint{
 		if(a < 0) a += mod;
 	}
 
+	operator long long() const{ return a; }
+
 	bool operator==(const modint &x) const{ return a == x.a; }
 	bool operator!=(const modint &x) const{ return a != x.a; }
 
@@ -69,4 +71,6 @@ struct modint{
 		return ret;
 	}
 };
-//!!!!!!unverified!!!!!!
+//verified
+//http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3839041
+//https://atcoder.jp/contests/m-solutions2019/submissions/7212715
