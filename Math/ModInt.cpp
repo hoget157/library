@@ -40,19 +40,6 @@ struct modint{
 		return *this;
 	}
 
-	modint &operator++(){ return (*this) += 1; }
-	modint &operator--(){ return (*this) -= 1; }
-	modint &operator++(int){
-		modint tmp = *this;
-		(*this) += 1;
-		return tmp;
-	}
-	modint &operator--(int){
-		modint tmp = *this;
-		(*this) -= 1;
-		return tmp;
-	}
-
 	friend ostream &operator<<(ostream &os,const modint &x){
 		return os << x.a;
 	}
