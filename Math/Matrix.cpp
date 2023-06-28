@@ -11,8 +11,8 @@ struct Matrix{
 	Matrix operator*(const Matrix &B) const{ Matrix(*this) *= B; }
 	
 	Matrix &operator*=(const T &x){
-		for(int i = 0;i < A.size();i++){
-			for(int j = 0;j < A[0].size();j++) A[i][j] *= x;
+		for(int i = 0;i < (int)A.size();i++){
+			for(int j = 0;j < (int)A[0].size();j++) A[i][j] *= x;
 		}
 		return *this;
 	}
@@ -20,9 +20,9 @@ struct Matrix{
 	Matrix &operator*=(const Matrix &B) {
 		assert(A[0].size() == B.size());
 		vector<vector<T>> C(A.size(),vector<T>(B[0].size(),T(0)));
-		for(int i = 0;i < A.size();i++){
-			for(int k = 0;k < B.size();k++){
-				for(int j = 0;j < B[0].size();j++) C[i][j] += A[i][k] * B[k][j];
+		for(int i = 0;i < (int)A.size();i++){
+			for(int k = 0;k < (int)B.size();k++){
+				for(int j = 0;j < (int)B[0].size();j++) C[i][j] += A[i][k] * B[k][j];
 			}
 		}
 		A.swap(C);
@@ -32,8 +32,8 @@ struct Matrix{
 	vector<T> operator*(const vector<T> &v) const{
 		assert(A[0].size() == v.size());
 		vector<T> ret(A.size());
-		for(int i = 0;i < A.size();i++){
-			for(int j = 0;j < A[0].size();j++) ret[i] += A[i][j] * v[j];
+		for(int i = 0;i < (int)A.size();i++){
+			for(int j = 0;j < (int)A[0].size();j++) ret[i] += A[i][j] * v[j];
 		}
 		return ret;
 	}

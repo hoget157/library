@@ -15,6 +15,7 @@ struct modint{
 
 	modint operator-() const{ return modint(a ? (mod - a) : 0); }
 	modint operator~() const{ return pow(mod - 2); }
+	modint inv() const{ return pow(mod - 2); }
 
 	modint operator+(const modint &x) const{ return modint(*this) += x; }
 	modint operator-(const modint &x) const{ return modint(*this) -= x; }
