@@ -1,12 +1,13 @@
 //Requires: Graph/Template
 
 template<class T>
-void warshallFloyd(Matrix<T> &G){
-	for(int k = 0;k < G.size();k++){
-		for(int i = 0;i < G.size();i++){
-			for(int j = 0;j < G.size();j++){
-				if(G[i][k] == INF || G[k][j] == INF) continue;
-				G[i][j] = min(G[i][j],G[i][k] + G[k][j]);
+void warshallFloyd(Matrix<T> &G, T INFTY = INF){
+	int n = G.size();
+	for(int k = 0; k < n; k++){
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < n; j++){
+				if(G[i][k] == INFTY || G[k][j] == INFTY) continue;
+				G[i][j] = min(G[i][j], G[i][k] + G[k][j]);
 			}
 		}
 	}
